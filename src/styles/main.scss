@@ -1,5 +1,15 @@
-$bgColor: rgb(99, 75, 75);
+@use 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$corDeFundo: #040714;
+$corTextoPrincipal: silver;
+$corTextoSecundario: #f9f9f9;
 
 body {
-    background-color: $bgColor;
+    background-color: $corDeFundo;
 }
