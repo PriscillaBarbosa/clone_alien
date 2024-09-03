@@ -1,6 +1,7 @@
 {
   "name": "clone_alien",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,7 +21,9 @@
   "homepage": "https://github.com/PriscillaBarbosa/clone_alien#readme",
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-sass": "^5.1.0",
+    "imagemin-webp": "^8.0.0",
     "sass": "^1.77.8"
   }
 }

@@ -1,5 +1,11 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+
+const sass = gulpSass(dartSass);
+
+import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+import imageminWebp from 'imagemin-webp';
 
 function styles() {
     return gulp.src('./src/styles/*.scss')
@@ -7,9 +13,26 @@ function styles() {
         .pipe(gulp.dest('./dist/css'));
 }
 
-exports.default = styles;
-exports.watch = function() {
-    gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
+function images() {
+    return gulp.src(['src/images/**/*.{png,jpg,jpeg,svg}'])
+        .pipe(imagemin([], { verbose: true }))
+        .pipe(gulp.dest('dist/images'));
+}
+
+function webpImages() {
+    return gulp.src('src/images/**/*.webp')
+        .pipe(imagemin([
+            imageminWebp({ quality: 50 })
+        ], { verbose: true }))
+        .pipe(gulp.dest('dist/images'));
+}
+
+export default gulp.parallel(styles, images, webpImages);
+
+export function watch() {
+    gulp.watch('./src/styles/*.scss', gulp.parallel(styles));
+    gulp.watch('./src/images/*', gulp.parallel(images));
+    gulp.watch('./src/images/**/*.webp', gulp.parallel(webpImages));
 }
 
 
