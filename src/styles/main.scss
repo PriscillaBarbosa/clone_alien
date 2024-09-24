@@ -40,7 +40,7 @@ body {
   align-items: center;
   background-color: black;
   color: white;
-  padding: 10px; 
+  padding: 10px;
 
   &__logo {
     font-size: 24px;
@@ -76,7 +76,6 @@ body {
   position: relative;
   padding-left: 50px; // Adiciona um espaçamento à esquerda
 
-  // Overlay to darken the background image for better text contrast
   &::before {
     content: '';
     position: absolute;
@@ -91,26 +90,25 @@ body {
   &__content {
     position: relative;
     z-index: 2;
-    max-width: 600px; // Limita a largura do conteúdo para não estender pela página inteira
+    max-width: 600px; // Limita a largura do conteúdo
 
     &__title {
       font-size: 60px;
       font-weight: bold;
       margin-bottom: 20px;
-      color: $secondary-color;
-      text-align: left; // Alinha o título à esquerda
+      text-align: left;
     }
 
     &__description {
       font-size: 20px;
       margin: 0 auto 30px;
-      text-align: left; // Alinha o texto à esquerda
+      text-align: left;
     }
 
     &__buttons {
       display: flex;
       gap: 20px;
-      justify-content: flex-start; // Alinha os botões à esquerda
+      justify-content: flex-start;
 
       &__btn {
         @include button-style($primary-color, darken($primary-color, 10%));
@@ -191,7 +189,6 @@ body {
   &__description {
     font-size: 18px;
     line-height: 1.8;
-
   }
 }
 
@@ -201,15 +198,15 @@ body {
   padding: 20px 0;
   text-align: center;
   color: #fff;
-  
+
   p {
     margin: 0;
     font-size: 14px;
   }
-  
+
   .list-inline-item {
     margin-right: 10px;
-    
+
     a {
       color: #fff;
       text-decoration: none;
@@ -218,4 +215,32 @@ body {
       }
     }
   }
+
+  .hero {
+    padding-left: 10px;
+    height: 50vh;
+
+    &__content {
+      max-width: 100%; // Ajusta a largura do conteúdo
+      
+      &__title {
+        font-size: 30px; // Reduz ainda mais o tamanho da fonte
+      }
+
+      &__description {
+        font-size: 14px; // Reduz ainda mais o tamanho da fonte
+      }
+
+      &__buttons {
+        flex-direction: column; // Alinha os botões verticalmente
+        gap: 10px; // Diminui o espaço entre os botões
+      }
+    }
+  }
+
+  .suggestions__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Alterado para 2 colunas
+  }
 }
+
