@@ -1,12 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/css/main.css">
+    <title>Prometheus - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/main.css">
 </head>
 <body>
-    <h1> olá </h1>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/disneyplus.svg" alt="Logo" width="80" height="80" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-house-door"></i> Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-search"></i> Pesquisa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-list"></i> Minha Lista</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-film"></i> Filmes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-tv"></i> Séries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-star-fill"></i> Originais</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Ícone de Usuário Posicionado à Direita -->
+        <div class="user-icon">
+            <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="./src/images/face_usuario.png" alt="User" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Configurações</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__content__branding">
+                    <img src="./src/images/prometheus nome.webp" alt="Prometheus">
+                </h1>
+                <p class="hero__meta">2012 • 2h 6min • Ficção científica, Ação e aventura</p>
+                <p class="hero__description">Uma equipe de cientistas e exploradores viaja em busca das origens do ser humano.</p>
+                <div class="hero__actions">
+                    <a href="#" class="btn btn-light hero__btn">Assistir</a>
+                    <a href="#" class="btn btn-outline-light hero__btn">Trailer</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="suggestions py-4">
+            <div class="container">
+                <h2 class="suggestions__title text-center text-white">Sugestões</h2>
+                <div class="suggestions__grid row">
+                    <div class="col-md-2 col-5 suggestions__item">
+                        <img src="./src/images/Alien.png" alt="Alien" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-2 col-8 suggestions__item">
+                        <img src="./src/images/Alien3.png" alt="Alien 3" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-2 col-8 suggestions__item">
+                        <img src="./src/images/Alien_ressureicao.png" alt="Alien Ressurreição" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-2 col-8 suggestions__item">
+                        <img src="./src/images/Aliens.png" alt="Aliens" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-2 col-8 suggestions__item">
+                        <img src="./src/images/covenant.webp" alt="Alien Ressurreição" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Prometheus. Todos os direitos reservados.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#" class="text-white">Política de Privacidade</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="text-white">Termos de Serviço</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="text-white">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,15 +1,221 @@
-@use 'hero';
+@import 'variables';
+@import 'header';
+@import 'hero';
+@import 'suggestions';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: 'Avenir', sans-serif;
+  src: url(../../assets/fonts/Avenir-Regular.woff2);
+  font-weight: normal;
 }
 
-$corDeFundo: #040714;
-$corTextoPrincipal: silver;
-$corTextoSecundario: #f9f9f9;
+// Mixins
+@mixin button-style($bg-color, $hover-color) {
+  background-color: $bg-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: $secondary-color;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+// Global styles
 body {
-    background-color: $corDeFundo;
+  margin: 0;
+  padding: 0;
+}
+
+// Navbar
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px; 
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__nav {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+
+    &-item {
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  width: 100%;
+  height: 80vh;
+  background-image: url(/src/images/hero_desktop.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // Alinha o conteúdo à esquerda
+  color: $secondary-color;
+  position: relative;
+  padding-left: 50px; // Adiciona um espaçamento à esquerda
+
+  // Overlay to darken the background image for better text contrast
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; // Limita a largura do conteúdo para não estender pela página inteira
+
+    &__title {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: $secondary-color;
+      text-align: left; // Alinha o título à esquerda
+    }
+
+    &__description {
+      font-size: 20px;
+      margin: 0 auto 30px;
+      text-align: left; // Alinha o texto à esquerda
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start; // Alinha os botões à esquerda
+
+      &__btn {
+        @include button-style($primary-color, darken($primary-color, 10%));
+
+        &--highlight {
+          background-color: $accent-color;
+          &:hover {
+            background-color: darken($accent-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Movie Banner Section
+.banner {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  &__poster {
+    width: 350px;
+    border-radius: 10px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-left: 20px;
+
+    &__title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: $secondary-color;
+    }
+
+    &__description {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 20px;
+
+      &__btn {
+        @include button-style($primary-color, darken($primary-color, 10%));
+
+        &--highlight {
+          background-color: $accent-color;
+          &:hover {
+            background-color: darken($accent-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Movie Information Section
+.movie-info {
+  max-width: 800px;
+  text-align: center;
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: $accent-color;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.8;
+
+  }
+}
+
+// Footer Section
+.footer {
+  background-color: #111;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .list-inline-item {
+    margin-right: 10px;
+    
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
