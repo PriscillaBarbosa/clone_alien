@@ -1,0 +1,55 @@
+.header {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .navbar-nav.ms-auto {
+        margin-left: auto;
+    }
+
+    .navbar .nav-link, .navbar .nav-link i {
+        color: white !important;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar .nav-link:hover {
+        transform: scale(1.1);
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        background-color: black;
+        color: white;
+    }
+
+    /* Ajustando o ícone do usuário */
+    .user-icon {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+
+        img {
+            width: 30px; /* Defina o tamanho desejado aqui */
+            height: 30px; /* Defina o tamanho desejado aqui */
+            border-radius: 50%; /* Mantém o formato circular */
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .navbar .navbar-brand img {
+        height: 40px;
+        width: auto;
+    }
+}

@@ -1,5 +1,92 @@
 .hero {
-    padding: 5.6vw;
-    min-height: 80vh;
-    background-image: url(../images/hero_desktop.png);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $secondary-color;
+    padding: 5px;
+    position: relative;
+    background-image: url(/dist/images/Prometheus.png);
+
+    &__image img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    &__details {
+        margin-left: 20px;
+
+        &__title {
+            font-size: 3rem;
+            font-family: $font-family;
+        }
+
+        &__meta {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        &__description {
+            margin-bottom: 30px;
+        }
+
+        &__actions .btn {
+            margin-right: 10px;
+        }
+    }
+}
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $secondary-color;
+    padding: 5px;
+    position: relative;
+    background-image: url(/dist/images/Prometheus.png);
+
+    &__image img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    &__details {
+        margin-left: 20px;
+
+        &__title {
+            font-size: 3rem;
+            font-family: $font-family;
+        }
+
+        &__meta {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        &__description {
+            margin-bottom: 30px;
+        }
+
+        &__actions .btn {
+            margin-right: 10px;
+        }
+    }
+}
+
+// Novo estilo para a navbar
+.navbar {
+    height: 60px; // Altura da navbar
+
+    .user-icon {
+        margin-left: auto; // Empurra o ícone para a direita
+        display: flex;
+        align-items: center; // Alinha o ícone verticalmente
+    }
+
+    .user-icon img {
+        width: 30px;
+        height: 30px;
+    }
 }
