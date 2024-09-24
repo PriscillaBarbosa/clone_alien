@@ -1,8 +1,6 @@
 .suggestions {
     padding: 20px;
     background-color: $primary-color;
-    
-    
 
     &__title {
         color: $secondary-color;
@@ -12,12 +10,10 @@
 
     &__grid {
         display: flex;
-        gap: 15px;
-        flex-wrap: wrap; // Permite que os itens se ajustem em várias linhas, se necessário
+        flex-wrap: wrap;
     }
 
     &__item {
-        flex: 1;
         text-align: center;
         color: $secondary-color;
 
@@ -25,11 +21,11 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            transition: transform 0.3s ease; // Transição suave para o efeito de aumento
+            transition: transform 0.3s ease;
         }
 
         img:hover {
-            transform: scale(1.05); // Aumenta a imagem ao passar o mouse
+            transform: scale(1.05);
         }
 
         &__name {
