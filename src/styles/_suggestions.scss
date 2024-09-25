@@ -1,36 +1,64 @@
 .suggestions {
-    padding: 20px;
+    padding: 20px;width: 100%;
     background-color: $primary-color;
 
     &__title {
         color: $secondary-color;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        font-family: "Avenir", sans-serif;
         margin-bottom: 10px;
     }
+}
+.suggestions__image {
+    width: 120px;  /* Ajuste a largura conforme desejado */
+    height: auto;  /* Mantém a proporção da imagem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição suave */
+}
 
-    &__grid {
+.suggestions__item {
+    margin: 0 5px; /* Ajuste a margem lateral para reduzir o espaçamento entre as imagens */
+}
+
+.suggestions__item:hover .suggestions__image {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra */
+}
+
+/* Responsividade para telas até 425px */
+@media (max-width: 425px) {
+    .suggestions__grid {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column; /* Coloca as imagens em uma coluna */
+        align-items: center; /* Centraliza as imagens */
     }
 
-    &__item {
-        text-align: center;
-        color: $secondary-color;
+    .suggestions__item {
+        width: 80%; /* A largura das imagens será 80% da tela */
+        margin-bottom: 15px; /* Espaçamento entre as imagens */
+    }
 
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        &__name {
-            margin-top: 10px;
-            font-size: 1rem;
-        }
+    .suggestions__image {
+        width: 100%; /* A imagem ocupa toda a largura do item */
+        height: auto;
     }
 }
+
+/* Responsividade para telas entre 425px e 768px */
+@media (min-width: 426px) and (max-width: 768px) {
+    .suggestions__grid {
+        display: flex;
+        flex-direction:column; /* Coloca as imagens em uma coluna */
+        align-items: center; /* Centraliza as imagens */
+    }
+
+    .suggestions__item {
+        width: 80%; /* A largura das imagens será 70% da tela */
+        margin-bottom: 20px; /* Espaçamento entre as imagens */
+    }
+
+    .suggestions__image {
+        width: 100%; /* A imagem ocupa toda a largura do item */
+        height: auto;
+    }
+}
+
