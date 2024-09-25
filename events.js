@@ -18,4 +18,4 @@ trailerBtn.addEventListener('click', function(event) {
     trailerBtn.classList.add('btn-active'); // Adiciona a classe ativa
     watchBtn.classList.remove('btn-active'); // Remove a classe ativa do botão "Assistir"
     watchBtn.classList.add('btn-inactive'); // Adiciona a classe inativa
-});
+});t
