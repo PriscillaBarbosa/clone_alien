@@ -3,6 +3,9 @@
 @import 'hero';
 @import 'suggestions';
 
+/* Garante que a wrapper ocupe toda a largura da tela e esteja centralizada */
+
+
 @font-face {
   font-family: 'Avenir', sans-serif;
   src: url(../../assets/fonts/Avenir-Regular.woff2);
@@ -122,6 +125,16 @@ body {
       }
     }
   }
+
+  .btn-active {
+    background-color: white !important; /* Fundo branco para o botão ativo */
+    color: black !important; /* Texto preto para o botão ativo */
+}
+
+.btn-inactive {
+    background-color: black !important; /* Fundo preto para o botão inativo */
+    color: white !important; /* Texto branco para o botão inativo */
+}
 }
 
 // Movie Banner Section
@@ -243,4 +256,3 @@ body {
     grid-template-columns: repeat(2, 1fr); // Alterado para 2 colunas
   }
 }
-

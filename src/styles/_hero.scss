@@ -7,6 +7,7 @@
     padding: 5px;
     position: relative;
     background-image: url(/dist/images/Prometheus.png);
+    
 
     &__image img {
         width: 100%;
@@ -19,11 +20,13 @@
 
         &__title {
             font-size: 3rem;
+            font-family: "Avenir", sans-serif;
         }
 
         &__meta {
             font-size: 1rem;
             margin: 10px 0;
+            font-family: "Avenir", sans-serif;
         }
 
         &__description {
@@ -31,7 +34,66 @@
         }
 
         &__actions .btn {
-            margin-right: 10px;
+            margin-right: 20px;
         }
+    }
+}
+
+.hero__branding-image {
+    width: 700px;  /* Defina a largura desejada */
+    height: auto;  /* Mantém a proporção original da imagem */
+}
+
+.hero__btn {
+    width: 150px;  /* Defina a largura desejada */
+    height: 50px;  /* Defina a altura desejada */
+    font-size: 16px; /* Ajuste o tamanho da fonte, se necessário */
+    padding: 10px; /* Adiciona um preenchimento extra, se desejado */
+}
+
+/* Responsividade para telas até 768px */
+@media (max-width: 768px) {
+    .hero__branding-image {
+        max-width: 500px; /* Diminui a largura máxima da imagem */
+    }
+
+    .hero__meta {
+        font-size: 1rem; /* Diminui o tamanho da fonte para textos */
+    }
+    
+    .hero__description {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte para textos */
+    }
+
+    .hero__btn {
+        font-size: 0.9rem; /* Diminui o tamanho dos botões */
+        padding: 8px 16px;
+    }
+
+    .hero__content {
+        padding: 30px; /* Reduz o padding da seção */
+    }
+}
+
+/* Responsividade para telas até 425px */
+@media (max-width: 425px) {
+    .hero__branding-image {
+        max-width: 300px; /* Ajusta ainda mais a largura máxima da imagem */
+    }
+
+    .hero__meta {
+        font-size: 0.8rem; /* Diminui ainda mais o tamanho da fonte */
+    } 
+    .hero__description {
+        font-size: 0.9rem; /* Diminui ainda mais o tamanho da fonte */
+    }
+
+    .hero__btn {
+        font-size: 0.8rem; /* Diminui ainda mais o tamanho dos botões */
+        padding: 6px 12px;
+    }
+
+    .hero__content {
+        padding: 10px; /* Padding menor para telas pequenas */
     }
 }

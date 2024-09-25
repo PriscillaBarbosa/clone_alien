@@ -35,21 +35,92 @@
         display: flex;
         align-items: center;
         padding-left: 10px;
+}
 
-        img {
-            width: 30px; /* Defina o tamanho desejado aqui */
-            height: 30px; /* Defina o tamanho desejado aqui */
-            border-radius: 50%; /* Mantém o formato circular */
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.1);
-        }
+    .header__user-image {
+        width: 40px;  /* Defina a largura desejada */
+        height: 40px; /* Defina a altura desejada */
+        transition: transform 0.3s ease; /*adiciona uma transição suave*/
     }
 
+    .header__user-icon:hover .header__user-image {
+        transform: scale(1.2); /* Aumenta o tamanho da imagem em 20% no hover */
+    }
+    
+
     .navbar .navbar-brand img {
-        height: 40px;
+        height: 50px;
         width: auto;
+    }
+}
+
+/* Responsividade para telas até 425px */
+@media (max-width: 425px) {
+
+    .header__user-icon {
+        position: absolute; /* Manter ícone fixo */
+        right: 1rem; /* Ajustar para o espaço desejado */
+        top: 50%; /* Centralizar verticalmente */
+        transform: translateY(-50%); /* Ajustar para alinhar ao centro */
+    }
+
+    .navbar-nav .nav-link span {
+        display: none; /* Textos inicialmente escondidos */
+    }
+
+    .navbar-collapse {
+        display: none !important; /* Ocultar por padrão */
+    }
+
+    .navbar-collapse.show {
+        display: block !important; /* Mostrar quando ativa */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column; /* Os ícones e textos aparecerão em uma coluna */
+        align-items: flex-start;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Tamanho ajustável do texto quando o menu está expandido */
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link i {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+}
+
+/* Responsividade para telas entre 426px e 768px */
+@media (min-width: 426px) and (max-width: 768px) {
+    .navbar-toggler-icon {
+        display: none; /* Esconde o botão de três barras */
+    }
+
+    .navbar-nav .nav-link {
+        justify-content: center;
+        font-size: 0.9rem; /* Tamanho um pouco menor dos textos */
+    }
+
+    .navbar-nav .nav-link span {
+        display: none; /* Esconde os textos */
+    }
+
+    .navbar-nav .nav-link i {
+        font-size: 1rem; /* Ajusta o tamanho dos ícones */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Mantém os ícones na horizontal */
+        gap: 15px; /* Espaçamento entre os ícones */
+    }
+
+    .collapse.navbar-collapse {
+        display: flex !important;
+        justify-content: center;
     }
 }
