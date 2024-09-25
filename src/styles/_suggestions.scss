@@ -10,13 +10,14 @@
     }
 }
 .suggestions__image {
-    width: 120px;  /* Ajuste a largura conforme desejado */
+    width: 300px;  /* Ajuste a largura conforme desejado */
     height: auto;  /* Mantém a proporção da imagem */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição suave */
 }
 
 .suggestions__item {
-    margin: 0 5px; /* Ajuste a margem lateral para reduzir o espaçamento entre as imagens */
+    margin: 0; /* Ajuste a margem lateral para reduzir o espaçamento entre as imagens */
+    padding: 5px 5px 10px 10px;
 }
 
 .suggestions__item:hover .suggestions__image {
